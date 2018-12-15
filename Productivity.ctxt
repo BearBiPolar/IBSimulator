@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Productivity
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Productivity\ here.\r\n\r\n\ @author\ William\ Wang\r\n\ @version\ 2018-12-15\ 1.0\r\n
+comment1.params=
+comment1.target=Productivity()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Productivity\r\n
+comment2.params=happiness\ health
+comment2.target=void\ changeProductivity(int,\ int)
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment3.params=
+comment3.target=int\ returnProductivity()
+comment3.text=\r\n\ Returns\ the\ productivity.\r\n\r\n\ @return\ \ \ \ the\ productivity\r\n
+numComments=4
