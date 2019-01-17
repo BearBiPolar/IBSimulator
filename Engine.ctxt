@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Engine
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Engine\ here.\r\n\r\n\ @author\ William\ Wang\r\n\ @version\ 2018-12-14\ 1.0\r\n
+comment1.params=
+comment1.target=Engine()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Engine\r\n
+comment2.params=
+comment2.target=void\ action()
+comment3.params=
+comment3.target=java.lang.String\ returnValues()
+comment3.text=\r\n\ \r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ values\r\n
+comment4.params=
+comment4.target=java.lang.String\ moneyValue()
+comment5.params=
+comment5.target=java.lang.String\ timeValue()
+comment6.params=
+comment6.target=java.lang.String\ healthValue()
+comment7.params=
+comment7.target=java.lang.String\ happinessValue()
+comment8.params=
+comment8.target=java.lang.String\ gradesValue()
+comment9.params=
+comment9.target=java.lang.String\ productivityValue()
+numComments=10

@@ -1,119 +1,95 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.IOException;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 /**
  * Write a description of class OutputWindow here.
  *
- * @author William Wang
- * @version 2018-12-14 1.0
+ * @author (your name)
+ * @version (a version number or a date)
  */
 public class OutputWindow
 {
     // instance variables - replace the example below with your own
-    private Money money;
-    private Time time;
-    private Happiness happiness;
-    private Health health;
-    private Grade grade;
-    private Productivity productivity;
+    private final int windowHeight = 480;
+    private final int windowWidth = 720;
 
+    private Label moneyLabel;
+    private Label timeLabel;
+    private Label healthLabel;
+    private Label happinessLabel;
+    private Label gradesLabel;
+    private Label productivityLabel;
+
+    Engine engine;
+
+    Panel intro;
+
+    Frame frame;
+
+    Label name ;
     /**
      * Constructor for objects of class OutputWindow
      */
-    public OutputWindow()
+    public OutputWindow() 
     {
         // initialise instance variables
-        money = new Money();
-        time = new Time();
-        happiness = new Happiness();
-        health = new Health();
-        grade = new Grade();
-        productivity = new Productivity();
-    }
 
-    public void action()
-    {
-        Boolean isDone = false;
-        String exitCondition = "exit";
-        // create new buffered reader
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        String string = "";
-        try
-        {
-            // read the action
-            string = in.readLine();
-            in.close();
-        }
-        catch (IOException exception)
-        {
+        engine = new Engine();
 
-        }  
-        // analysis which action it is
-        switch(string)
-        {
-            // if the action is sleep, work, study etc and its effects
-            case "sleep":
-            time.addTime(480);
-            happiness.addHappiness(15);
-            health.addHealth(10);
-            break;
-            case "study":
-            time.addTime(60);
-            happiness.addHappiness(-10);
-            health.addHealth(-2);
-            grade.addGrade(5);
-            break;
-            case "work":
-            time.addTime(120);
-            money.addMoney(30);
-            happiness.addHappiness(-15);
-            health.addHealth(-4);
-            break;
-            // if user would like to exit
-            case "exit":
-            isDone = true;
-            break;
-            // if the action is not included
-            default:
-            System.out.println("Sorry, this option is not available.");
-            action();
-            break;
-        }
-        // change productivity rate to match new happiness and health levels
-        productivity.changeProductivity(happiness.returnHappiness(), health.returnHealth());
-        // if user is not done
-        if (!isDone)
-        {
-            // return the new values
-            System.out.println(returnValues());
-            // continue to accept actions
-            action();
-        }
-        else
-        {
-            // return the new values
-            System.out.println(returnValues());
-        }
+        frame = new Frame();
+
+        frame.setLayout(new FlowLayout());
+
+        intro = new Panel();
+
+        frame.add(intro);
+        name = new Label("name");
+        intro.add(name);
+
+        Panel stats = new Panel();          // Panel is a container
+
+        frame.add(stats);
+        moneyLabel = new Label("money: $" + engine.moneyValue());
+        stats.add(moneyLabel);
+        timeLabel = new Label("time: " + engine.timeValue());
+        stats.add(timeLabel);
+        healthLabel = new Label("health: " + engine.healthValue() + "%");
+        stats.add(healthLabel);
+        Label happinessLabel = new Label("happiness: " + engine.happinessValue());
+        stats.add(happinessLabel);
+        Label gradesLabel = new Label("grades: " + engine.gradesValue());
+        stats.add(gradesLabel);
+
+        Frame bottom = new Frame();
+        Panel bot = new Panel();
+        bottom.add(bot);
+        productivityLabel = new Label(engine.productivityValue());
+        bot.add(productivityLabel);
+        
+        Panel text = new Panel();
+        JTextField action = new JTextField();
+        text.add(action);
+
+        frame.setTitle("IB Simulator");  // "super" Frame sets its title
+        frame.setSize(windowWidth, windowHeight);        // "super" Frame sets its initial window size
+        frame.setVisible(true);
+
+        
     }
 
     /**
-     * 
      * An example of a method - replace this comment with your own
      *
      * @param  y  a sample parameter for a method
-     * @return    the values
+     * @return    the sum of x and y
      */
-    public String returnValues()
+    public void setNewValues()
     {
-        return
-        "Time: " + time.returnTime() + 
-        ", Money: $" + money.returnBalance() + 
-        ", Happiness: " + happiness.returnHappiness() + 
-        "%, Health: " + health.returnHealth() +
-        "%, Grade: " + grade.returnGrade() +
-        "%, Productivity " + productivity.returnProductivity() +
-        "%, ";
+        moneyLabel.setText("Money: $" + engine.moneyValue());
+        timeLabel.setText("Time: " + engine.timeValue());
+        healthLabel.setText("Health: " + engine.healthValue() + "%");
+        happinessLabel.setText("Happiness: " + engine.happinessValue() + "%");
+        gradesLabel.setText("Grades: " + engine.gradesValue() + "%");
+        productivityLabel.setText("Productivity: " + engine.productivityValue() + "%");
     }
 }
