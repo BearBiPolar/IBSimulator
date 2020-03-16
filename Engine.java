@@ -43,14 +43,14 @@ public class Engine
         try
         {
             // read the action
-            string = in.readLine();
+            string = in.readLine().trim();
             in.close();
         }
         catch (IOException exception)
         {
 
         }  
-        // analysis which action it is
+        // analyze which action it is
         switch(string)
         {
             // if the action is sleep, work, study etc and its effects
