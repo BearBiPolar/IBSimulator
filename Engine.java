@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.IOException;
 /**
- * Write a description of class Engine here.
+ * The Game Engine.
  *
  * @author William Wang
  * @version 2018-12-14 1.0
