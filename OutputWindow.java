@@ -26,7 +26,7 @@ public class OutputWindow implements ActionListener
 
     JFrame frame;
 
-    Label name ;
+    Label nameLabel;
 
     JButton sleepButton;
     JButton studyButton;
@@ -50,13 +50,15 @@ public class OutputWindow implements ActionListener
         intro = new Panel();
 
         frame.add(intro);
-        name = new Label("name");
-        intro.add(name);
+        nameLabel = new Label("name");
+        intro.add(nameLabel);
 
         Panel stats = new Panel();          // Panel is a container
 
         moneyLabel = new Label("money: $" + engine.moneyValue());
+
         stats.add(moneyLabel);
+
         timeLabel = new Label("time: " + engine.timeValue());
         stats.add(timeLabel);
         healthLabel = new Label("health: " + engine.healthValue() + "%");
@@ -65,6 +67,14 @@ public class OutputWindow implements ActionListener
         stats.add(happinessLabel);
         gradesLabel = new Label("grades: " + engine.gradesValue());
         stats.add(gradesLabel);
+
+        timeLabel.setFont(new Font("Arial", Font.PLAIN, 40));
+        moneyLabel.setFont(new Font("Arial", Font.PLAIN, 40));
+        healthLabel.setFont(new Font("Arial", Font.PLAIN, 40));
+        happinessLabel.setFont(new Font("Arial", Font.PLAIN, 40));
+        gradesLabel.setFont(new Font("Arial", Font.PLAIN, 40));
+        nameLabel.setFont(new Font("Arial", Font.PLAIN, 40));
+        
 
         frame.add(stats, BorderLayout.PAGE_START);
 
@@ -82,6 +92,13 @@ public class OutputWindow implements ActionListener
         eatButton = new JButton("Eat");
         eatButton.addActionListener(this);
 
+        sleepButton.setFont(new Font("Arial", Font.PLAIN, 40));
+        studyButton.setFont(new Font("Arial", Font.PLAIN, 40));
+        workButton.setFont(new Font("Arial", Font.PLAIN, 40));
+        gameButton.setFont(new Font("Arial", Font.PLAIN, 40));
+        eatButton.setFont(new Font("Arial", Font.PLAIN, 40));
+        exerciseButton.setFont(new Font("Arial", Font.PLAIN, 40));
+
         buttons.add(sleepButton);
         buttons.add(studyButton);
         buttons.add(workButton);
@@ -92,6 +109,7 @@ public class OutputWindow implements ActionListener
 
         Panel bot = new Panel();
         productivityLabel = new Label("productivity: " +engine.productivityValue());
+        productivityLabel.setFont(new Font("Arial", Font.PLAIN, 40));
         bot.add(productivityLabel);
         frame.add(bot, BorderLayout.PAGE_END);
 
@@ -121,7 +139,7 @@ public class OutputWindow implements ActionListener
         happinessLabel.setText("Happiness: " + engine.happinessValue() + "%");
         gradesLabel.setText("Grades: " + engine.gradesValue() + "%");
         productivityLabel.setText("Productivity: " + engine.productivityValue() + "%");
-
+        frame.pack();
     }
 
     public void newDayEvent()
@@ -131,7 +149,6 @@ public class OutputWindow implements ActionListener
             engine.newDayEvent(frame);
             //newDay
 
-            
         }
     }
 
