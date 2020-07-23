@@ -45,7 +45,7 @@ public class Time
         }  
         while (hours > 23)
         {
-            System.out.println("daypassed");
+            
             newDay = true;
             hours = hours - 24;
             days = days + 1;

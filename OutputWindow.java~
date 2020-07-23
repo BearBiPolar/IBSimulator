@@ -107,7 +107,7 @@ public class OutputWindow implements ActionListener
 
     }
 
-    /**
+/**
      * An example of a method - replace this comment with your own
      *
      * @param  y  a sample parameter for a method
@@ -162,7 +162,7 @@ public class OutputWindow implements ActionListener
         {
             engine.action("exercise");
         }
-        if(e.getSource() == eatButton)
+                if(e.getSource() == eatButton)
         {
             engine.action("eat");
         }

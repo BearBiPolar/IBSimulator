@@ -72,7 +72,7 @@ public class Engine
             health.addHealth(10);
             case "eat":
             time.addTime(60);
-            money.addMoney(-10);
+            money.addMoney(-1);
             happiness.addHappiness(10);
             health.addHealth(10);
             
