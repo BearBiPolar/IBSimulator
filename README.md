@@ -1,4 +1,4 @@
-# IBSimulator
+# IB_Simulator
 
 PROJECT TITLE: IB Simulator
 
